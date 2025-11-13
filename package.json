@@ -1,0 +1,23 @@
+{
+  "name": "cron-transaction-xahau",
+  "version": "1.0.0",
+  "description": "CronSet transaction examples for Xahau network to trigger hook callbacks",
+  "main": "cronSet.js",
+  "scripts": {
+    "set-cron": "node cronSet.js",
+    "unset-cron": "node cronUnset.js"
+  },
+  "keywords": [
+    "xahau",
+    "cronset",
+    "hooks",
+    "xrpl",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "xahau": "^4.0.2",
+    "xrpl-accountlib": "^9.1.0"
+  }
+}
