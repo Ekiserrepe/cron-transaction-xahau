@@ -71,7 +71,7 @@ The transaction uses:
 
 **Important:** Make sure to update your seed in the file before running.
 
-#### Activating Hook Collection (Optional)
+#### Activating Hook Collection
 
 If you need to enable Transaction Signature Hook Collection:
 
@@ -89,7 +89,7 @@ If you need to remove the hook from your account for any reason:
 node uninstallHook.js
 ```
 
-This removes the installed hook by setting `Flags: 2` (hsfNSDELETE) with an empty `CreateCode` field.
+This removes the installed hook by setting `Flags: 1` with an empty `CreateCode` field.
 
 ### CronSet Management
 
