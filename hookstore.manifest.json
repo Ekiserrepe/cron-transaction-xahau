@@ -18,7 +18,6 @@
   "userConfig": {
     "StartTime": {
       "label": "Start time",
-      "default": "2000-01-01T00:00",
       "encoding": "uint32",
       "required": true,
       "inputType": "datetime",
@@ -56,12 +55,12 @@
         "toolchain": "hooks-c",
         "source_path": "PingCron.c"
       },
+      "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000",
       "HookOn": [
         "CRON"
       ],
       "HookCanEmit": [],
-      "HookParameters": [],
-      "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000"
+      "HookParameters": []
     }
   ],
   "install": [
@@ -92,7 +91,7 @@
       }
     },
     {
-      "TransactionType": "SetCron",
+      "TransactionType": "CronSet",
       "description": "Create Cron transaction",
       "required": true,
       "role": "installer",
