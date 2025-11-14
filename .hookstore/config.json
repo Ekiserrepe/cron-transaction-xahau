@@ -1,0 +1,14 @@
+{
+  "publishers": [
+    {
+      "username": "ekiserrepe",
+      "verifiedAt": "2025-11-14T13:48:53.873Z"
+    }
+  ],
+  "maintainers": [
+    "github:Ekiserrepe"
+  ],
+  "allowedOrgs": [
+    "xahau-hookstore"
+  ]
+}
