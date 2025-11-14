@@ -2,8 +2,10 @@
   "manifestVersion": "1",
   "name": "pingcron",
   "version": "1.0.0",
+  "description": "A empty hook to be called by cron feature",
   "publisher": "rNybLYJ4koM8PF3dJbyUZhrgYntGxf1nEk",
   "repo": "https://github.com/Ekiserrepe/cron-transaction-xahau",
+  "license": "MIT",
   "networks": [
     "xahau-testnet"
   ],
@@ -11,6 +13,40 @@
     "installer": {
       "label": "Installer Account",
       "description": "The account installing the hook"
+    }
+  },
+  "userConfig": {
+    "StartTime": {
+      "label": "Start time",
+      "default": "2000-01-01T00:00",
+      "encoding": "uint32",
+      "required": true,
+      "inputType": "datetime",
+      "description": "Start time for the cron configuration"
+    },
+    "RepeatCount": {
+      "label": "Repeat Count",
+      "default": "3",
+      "encoding": "uint8",
+      "required": true,
+      "inputType": "uint8",
+      "validation": {
+        "max": 256,
+        "min": 1
+      },
+      "description": "Times the cron will repeat"
+    },
+    "DelaySeconds": {
+      "label": "Delay Seconds",
+      "default": "120",
+      "encoding": "uint8",
+      "required": true,
+      "inputType": "uint8",
+      "validation": {
+        "max": 10000,
+        "min": 10
+      },
+      "description": "Delay among cron calls"
     }
   },
   "hooks": [
@@ -24,7 +60,8 @@
         "CRON"
       ],
       "HookCanEmit": [],
-      "HookParameters": []
+      "HookParameters": [],
+      "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000"
     }
   ],
   "install": [
@@ -68,41 +105,5 @@
         "DelaySeconds": "{{DelaySeconds}}"
       }
     }
-  ],
-  "description": "A empty hook to be called by cron feature",
-  "license": "MIT",
-  "userConfig": {
-    "StartTime": {
-      "label": "Start time",
-      "inputType": "datetime",
-      "encoding": "uint32",
-      "default": "2000-01-01T00:00",
-      "description": "Start time for the cron configuration",
-      "required": true
-    },
-    "RepeatCount": {
-      "label": "Repeat Count",
-      "inputType": "uint8",
-      "encoding": "uint8",
-      "default": "3",
-      "description": "Times the cron will repeat",
-      "required": true,
-      "validation": {
-        "min": 1,
-        "max": 256
-      }
-    },
-    "DelaySeconds": {
-      "label": "Delay Seconds",
-      "inputType": "uint8",
-      "encoding": "uint8",
-      "default": "120",
-      "description": "Delay among cron calls",
-      "required": true,
-      "validation": {
-        "min": 10,
-        "max": 10000
-      }
-    }
-  }
+  ]
 }
