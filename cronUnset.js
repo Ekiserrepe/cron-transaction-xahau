@@ -1,7 +1,7 @@
 const xahau = require('xahau');
 const { derive, utils, signAndSubmit } = require("xrpl-accountlib");
 
-const seed = 'snYcygNrNVSUR8PdPYq2P3w7UTBPm'; // Replace with your seed
+const seed = 'yourSeed'; // Replace with your seed
 const network = "wss://xahau-test.net";
 
 async function removeCronSet() {
