@@ -15,39 +15,6 @@
       "description": "The account installing the hook"
     }
   },
-  "userConfig": {
-    "StartTime": {
-      "label": "Start time",
-      "encoding": "uint32",
-      "required": true,
-      "inputType": "datetime",
-      "description": "Start time for the cron configuration"
-    },
-    "RepeatCount": {
-      "label": "Repeat Count",
-      "default": "3",
-      "encoding": "uint8",
-      "required": true,
-      "inputType": "uint8",
-      "validation": {
-        "max": 256,
-        "min": 1
-      },
-      "description": "Times the cron will repeat"
-    },
-    "DelaySeconds": {
-      "label": "Delay Seconds",
-      "default": "120",
-      "encoding": "uint8",
-      "required": true,
-      "inputType": "uint8",
-      "validation": {
-        "max": 10000,
-        "min": 10
-      },
-      "description": "Delay among cron calls"
-    }
-  },
   "hooks": [
     {
       "id": "pingcron",
@@ -59,8 +26,54 @@
       "HookOn": [
         "CRON"
       ],
+	  "abi": {},
       "HookCanEmit": [],
-      "HookParameters": []
+      "HookParameters": [],
+      "postInstallSettings": [
+        {
+          "name": "New cron schedule",
+          "description": "Set a new cron schedule for the hook to override the existing or expired schedule set during installation.",
+          "TransactionType": "CronSet",
+          "userConfig": {
+            "StartTime": {
+              "label": "Start time",
+              "encoding": "uint32",
+              "required": true,
+              "inputType": "datetime",
+              "description": "Start time for the cron configuration"
+            },
+            "RepeatCount": {
+              "label": "Repeat Count",
+              "default": "3",
+              "encoding": "uint8",
+              "required": true,
+              "inputType": "uint8",
+              "validation": {
+                "max": 256,
+                "min": 1
+              },
+              "description": "Times the cron will repeat"
+            },
+            "DelaySeconds": {
+              "label": "Delay Seconds",
+              "default": "120",
+              "encoding": "uint8",
+              "required": true,
+              "inputType": "uint8",
+              "validation": {
+                "max": 10000,
+                "min": 10
+              },
+              "description": "Delay among cron calls"
+            }
+          },
+          "payload": {
+            "StartTime": "{{StartTime}}",
+            "RepeatCount": "{{RepeatCount}}",
+            "DelaySeconds": "{{DelaySeconds}}"
+          }
+        }
+      ]
     }
   ],
   "install": [
@@ -104,5 +117,38 @@
         "DelaySeconds": "{{DelaySeconds}}"
       }
     }
-  ]
+  ],
+  "userConfig": {
+    "StartTime": {
+      "label": "Start time",
+      "encoding": "uint32",
+      "required": true,
+      "inputType": "datetime",
+      "description": "Start time for the cron configuration"
+    },
+    "RepeatCount": {
+      "label": "Repeat Count",
+      "default": "3",
+      "encoding": "uint8",
+      "required": true,
+      "inputType": "uint8",
+      "validation": {
+        "max": 256,
+        "min": 1
+      },
+      "description": "Times the cron will repeat"
+    },
+    "DelaySeconds": {
+      "label": "Delay Seconds",
+      "default": "120",
+      "encoding": "uint8",
+      "required": true,
+      "inputType": "uint8",
+      "validation": {
+        "max": 10000,
+        "min": 10
+      },
+      "description": "Delay among cron calls"
+    }
+  }
 }
