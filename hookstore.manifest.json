@@ -1,6 +1,6 @@
 {
   "manifestVersion": "1",
-  "name": "pingcron",
+  "name": "ping-cron",
   "version": "1.0.0",
   "description": "A empty hook to be called by cron feature",
   "publisher": "rNybLYJ4koM8PF3dJbyUZhrgYntGxf1nEk",
